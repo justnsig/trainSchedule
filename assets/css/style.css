@@ -31,5 +31,9 @@ td {
 }
 
 #trains {
-    background-color: lightslategray;
+    background-color: white;
+}
+
+#trainHead {
+    color: white;
 }
