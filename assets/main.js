@@ -34,14 +34,14 @@ $(document).ready(function () {
         var frequency = $("#frequency")
             .val()
             .trim();
-        firstTrainTime = moment(firstTrainTime, "hh:mm").format("hh:mm");
-        firstTrainTimeMoment = moment(firstTrainTime, "hh:mm").subtract(1, "years");
+        firstTrainTime = moment(firstTrainTime, "LTS").format("LTS");
+        firstTrainTimeMoment = moment(firstTrainTime, "LTS").subtract(1, "years");
         currentTime = moment();
         diffTime = moment().diff(moment(firstTrainTimeMoment), "minutes");
         timeRemaider = diffTime % frequency;
         minutesToNext = frequency - timeRemaider;
         nextTrain = moment().add(minutesToNext, "minutes");
-        nextTrainMoment = moment(nextTrain).format("hh:mm");
+        nextTrainMoment = moment(nextTrain).format("LTS");
         console.log(nextTrainMoment);
 
         database.ref().push({
@@ -50,7 +50,7 @@ $(document).ready(function () {
             firstTrainTime: firstTrainTime,
             frequency: frequency,
             nextTrainMoment: nextTrainMoment,
-            dateAdded: moment().format("X")
+            dateAdded: moment().format("LTS")
         });
 
         name = "";
