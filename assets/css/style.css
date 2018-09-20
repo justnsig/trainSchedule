@@ -40,7 +40,6 @@ td {
 }
 @media only screen and (max-width: 600px) {
     #name {
-        background-color: lightblue;
         display:none;
         width:0;
         height:0;
